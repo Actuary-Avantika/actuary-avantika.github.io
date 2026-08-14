@@ -17,16 +17,16 @@
            COLOR PALETTE
            ========================= */
         :root {
-            --wine: #681c32;
-            --wine-dark: #461323;
-            --gold: #b08d57;
-            --gold-light: #d4bd91;
-            --cream: #f8f5ef;
-            --paper: #fffdf9;
-            --charcoal: #27252a;
-            --muted: #6f6a6d;
-            --border: #e4ddd3;
-            --white: #ffffff;
+            --forest: #173F35;
+            --forest-dark: #102E27;
+            --gold: #B59A5A;
+            --gold-light: #D5C59A;
+            --cream: #F5F5F0;
+            --paper: #FFFDF9;
+            --charcoal: #292B29;
+            --muted: #686C68;
+            --border: #DFDED5;
+            --white: #FFFFFF;
         }
 
         /* =========================
@@ -69,7 +69,7 @@
            HEADER
            ========================= */
         header {
-            background: var(--wine);
+            background: var(--forest);
             color: var(--white);
             padding: 55px 7% 45px;
             position: relative;
@@ -79,22 +79,22 @@
         header::after {
             content: "";
             position: absolute;
-            width: 260px;
-            height: 260px;
-            border: 1px solid rgba(212, 189, 145, 0.35);
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(213, 197, 154, 0.30);
             border-radius: 50%;
-            right: -90px;
-            top: -100px;
+            right: -100px;
+            top: -110px;
         }
 
         header::before {
             content: "";
             position: absolute;
-            width: 160px;
-            height: 160px;
-            border: 1px solid rgba(212, 189, 145, 0.2);
+            width: 170px;
+            height: 170px;
+            border: 1px solid rgba(213, 197, 154, 0.20);
             border-radius: 50%;
-            right: 40px;
+            right: 45px;
             top: -65px;
         }
 
@@ -114,7 +114,7 @@
 
         h1 {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(2.6rem, 7vw, 5rem);
+            font-size: clamp(2.7rem, 7vw, 5rem);
             font-weight: 500;
             line-height: 1;
             letter-spacing: -2px;
@@ -123,7 +123,7 @@
 
         .title {
             font-size: 1.15rem;
-            color: #eadfd7;
+            color: #E0E8E3;
             margin-bottom: 30px;
         }
 
@@ -137,8 +137,9 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: #f5eee9;
+            color: #F1F4F1;
             font-size: 0.9rem;
+            transition: 0.2s ease;
         }
 
         .contact-item i {
@@ -180,7 +181,7 @@
             font-family: Georgia, "Times New Roman", serif;
             font-size: 1.65rem;
             font-weight: 500;
-            color: var(--wine-dark);
+            color: var(--forest-dark);
         }
 
         .heading-line {
@@ -190,80 +191,16 @@
         }
 
         /* =========================
-           SUMMARY
+           PROFILE
            ========================= */
         .summary {
             font-size: 1.05rem;
-            color: #494448;
+            color: #4E534F;
             max-width: 850px;
         }
 
         .summary strong {
-            color: var(--wine);
-        }
-
-        /* =========================
-           EXPERIENCE
-           ========================= */
-        .experience-item {
-            position: relative;
-            padding-left: 25px;
-            border-left: 2px solid var(--gold-light);
-            margin-left: 5px;
-            margin-bottom: 35px;
-        }
-
-        .experience-item::before {
-            content: "";
-            position: absolute;
-            left: -7px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--wine);
-            border: 2px solid var(--paper);
-            box-shadow: 0 0 0 1px var(--gold);
-        }
-
-        .experience-top {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-bottom: 4px;
-        }
-
-        .job-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--wine-dark);
-        }
-
-        .date {
-            color: var(--gold);
-            font-size: 0.85rem;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .company {
-            color: var(--muted);
-            font-size: 0.92rem;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            padding-left: 18px;
-        }
-
-        li {
-            margin-bottom: 6px;
-            color: #514c50;
-            font-size: 0.92rem;
-        }
-
-        li::marker {
-            color: var(--gold);
+            color: var(--forest);
         }
 
         /* =========================
@@ -283,7 +220,7 @@
         }
 
         .education-card h3 {
-            color: var(--wine-dark);
+            color: var(--forest-dark);
             font-size: 1rem;
             margin-bottom: 4px;
         }
@@ -327,14 +264,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--wine);
+            background: var(--forest);
             color: var(--gold-light);
             margin-bottom: 17px;
         }
 
         .project-card h3 {
             font-family: Georgia, serif;
-            color: var(--wine-dark);
+            color: var(--forest-dark);
             font-size: 1.1rem;
             margin-bottom: 3px;
         }
@@ -348,11 +285,11 @@
 
         .project-card p {
             font-size: 0.88rem;
-            color: #5c575a;
+            color: #5C615D;
         }
 
         /* =========================
-           ACTUARIAL SUBJECTS
+           ACTUARIAL STUDIES
            ========================= */
         .subjects {
             display: flex;
@@ -362,9 +299,9 @@
 
         .subject {
             padding: 8px 14px;
-            background: #f2ebe2;
-            border: 1px solid #dfd1c0;
-            color: var(--wine-dark);
+            background: #EEF0EA;
+            border: 1px solid #D5D8CC;
+            color: var(--forest-dark);
             font-size: 0.82rem;
             font-weight: 700;
         }
@@ -393,7 +330,7 @@
         }
 
         .skill {
-            background: var(--wine);
+            background: var(--forest);
             color: var(--white);
             padding: 7px 13px;
             font-size: 0.8rem;
@@ -402,7 +339,7 @@
 
         .skill.soft {
             background: transparent;
-            color: var(--wine-dark);
+            color: var(--forest-dark);
             border: 1px solid var(--gold-light);
         }
 
@@ -424,7 +361,7 @@
 
         .leadership-item h3 {
             font-size: 0.98rem;
-            color: var(--wine-dark);
+            color: var(--forest-dark);
         }
 
         .leadership-item p {
@@ -436,8 +373,8 @@
            FOOTER
            ========================= */
         footer {
-            background: var(--wine-dark);
-            color: #e8ddd8;
+            background: var(--forest-dark);
+            color: #DDE4DF;
             padding: 28px 7%;
             display: flex;
             justify-content: space-between;
@@ -457,6 +394,7 @@
         .footer-links a {
             color: var(--gold-light);
             font-size: 1rem;
+            transition: 0.2s ease;
         }
 
         .footer-links a:hover {
@@ -485,15 +423,6 @@
                 gap: 10px;
             }
 
-            .experience-top {
-                flex-direction: column;
-                gap: 2px;
-            }
-
-            .date {
-                white-space: normal;
-            }
-
             .project-grid,
             .skill-columns {
                 grid-template-columns: 1fr;
@@ -510,6 +439,7 @@
         }
 
         @media print {
+
             body {
                 background: white;
             }
@@ -519,7 +449,7 @@
             }
 
             header {
-                background: var(--wine) !important;
+                background: var(--forest) !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -536,15 +466,18 @@
 
 <div class="page">
 
-    <!-- =========================
-         HEADER
-         ========================= -->
+    <!-- HEADER -->
     <header>
+
         <div class="header-content">
 
-            <div class="eyebrow">Actuarial Science • Mathematics</div>
+            <div class="eyebrow">
+                Actuarial Science • Mathematics
+            </div>
 
-            <h1>Avantika<br>Vashishta</h1>
+            <h1>
+                Avantika<br>Vashishta
+            </h1>
 
             <p class="title">
                 M.Sc. Actuarial Science Student | Mathematics Graduate
@@ -558,35 +491,38 @@
                     avantika.vashishta@s.amity.edu
                 </a>
 
-                <a class="contact-item" href="tel:+918383883989">
+                <a class="contact-item"
+                   href="tel:+918383883989">
                     <i class="fa-solid fa-phone"></i>
                     +91 83838 83989
                 </a>
 
                 <a class="contact-item"
                    href="https://linkedin.com/in/avantika-vashishta"
-                   target="_blank">
+                   target="_blank"
+                   rel="noopener noreferrer">
                     <i class="fa-brands fa-linkedin-in"></i>
                     LinkedIn
                 </a>
 
                 <a class="contact-item"
                    href="https://github.com/Actuary-Avantika"
-                   target="_blank">
+                   target="_blank"
+                   rel="noopener noreferrer">
                     <i class="fa-brands fa-github"></i>
                     GitHub
                 </a>
 
             </div>
+
         </div>
+
     </header>
 
 
     <main>
 
-        <!-- =========================
-             SUMMARY
-             ========================= -->
+        <!-- PROFILE -->
         <section>
 
             <div class="section-heading">
@@ -596,81 +532,33 @@
             </div>
 
             <p class="summary">
-                <strong>Actuarial Science postgraduate student</strong> with a
-                background in Mathematics and an interest in applying statistical,
-                financial and analytical thinking to real-world business problems.
-                Currently pursuing an M.Sc. in Actuarial Science after completing
-                a B.Sc. (Hons.) in Mathematics, with experience across financial
-                documentation, technical projects, research presentation and
-                student leadership.
+                <strong>Actuarial Science postgraduate student</strong>
+                with a background in Mathematics and an interest in applying
+                statistical, financial and analytical thinking to real-world
+                business problems. Currently pursuing an M.Sc. in Actuarial
+                Science after completing a B.Sc. (Hons.) in Mathematics, with
+                experience across technical projects, research presentation
+                and student leadership.
             </p>
 
         </section>
 
 
-        <!-- =========================
-             EXPERIENCE
-             ========================= -->
+        <!-- EDUCATION -->
         <section>
 
             <div class="section-heading">
                 <span class="section-number">02</span>
-                <h2>Experience</h2>
-                <div class="heading-line"></div>
-            </div>
-
-            <div class="experience-item">
-
-                <div class="experience-top">
-                    <div class="job-title">
-                        Financial Services Intern
-                    </div>
-
-                    <div class="date">
-                        May 2026 – Jul 2026
-                    </div>
-                </div>
-
-                <div class="company">
-                    Shree Kamtanath Industrial
-                </div>
-
-                <ul>
-                    <li>
-                        Managed and organized financial records including
-                        invoices, bills and purchase orders.
-                    </li>
-
-                    <li>
-                        Supported billing and procurement documentation
-                        workflows.
-                    </li>
-
-                    <li>
-                        Gained exposure to financial reporting and
-                        day-to-day business operations.
-                    </li>
-                </ul>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             EDUCATION
-             ========================= -->
-        <section>
-
-            <div class="section-heading">
-                <span class="section-number">03</span>
                 <h2>Education</h2>
                 <div class="heading-line"></div>
             </div>
 
+
             <div class="education-card">
 
-                <h3>M.Sc. Actuarial Science</h3>
+                <h3>
+                    M.Sc. Actuarial Science
+                </h3>
 
                 <div class="education-school">
                     Amity School of Insurance, Banking and Actuarial Science,
@@ -678,14 +566,17 @@
                 </div>
 
                 <div class="education-score">
-                    Expected 2027 • CGPA: 7.60
+                    Expected 2027
                 </div>
 
             </div>
 
+
             <div class="education-card">
 
-                <h3>B.Sc. (Hons.) Mathematics</h3>
+                <h3>
+                    B.Sc. (Hons.) Mathematics
+                </h3>
 
                 <div class="education-school">
                     Department of Applied Sciences,
@@ -698,16 +589,19 @@
 
             </div>
 
+
             <div class="education-card">
 
-                <h3>Class XII</h3>
+                <h3>
+                    Class X
+                </h3>
 
                 <div class="education-school">
                     Sri Venkateshwar International School • CBSE
                 </div>
 
                 <div class="education-score">
-                    2022 • 69.00%
+                    88.60%
                 </div>
 
             </div>
@@ -715,16 +609,15 @@
         </section>
 
 
-        <!-- =========================
-             PROJECTS
-             ========================= -->
+        <!-- PROJECTS & RESEARCH -->
         <section>
 
             <div class="section-heading">
-                <span class="section-number">04</span>
+                <span class="section-number">03</span>
                 <h2>Projects & Research</h2>
                 <div class="heading-line"></div>
             </div>
+
 
             <div class="project-grid">
 
@@ -734,7 +627,9 @@
                         <i class="fa-solid fa-microchip"></i>
                     </div>
 
-                    <h3>Automatic Car Parking System</h3>
+                    <h3>
+                        Automatic Car Parking System
+                    </h3>
 
                     <div class="project-date">
                         May 2025
@@ -757,7 +652,9 @@
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
 
-                    <h3>Research Paper Presentation</h3>
+                    <h3>
+                        Research Paper Presentation
+                    </h3>
 
                     <div class="project-date">
                         December 2024
@@ -777,52 +674,78 @@
         </section>
 
 
-        <!-- =========================
-             ACTUARIAL SUBJECTS
-             ========================= -->
+        <!-- ACTUARIAL STUDIES -->
         <section>
 
             <div class="section-heading">
-                <span class="section-number">05</span>
+                <span class="section-number">04</span>
                 <h2>Actuarial Studies</h2>
                 <div class="heading-line"></div>
             </div>
 
             <div class="subjects">
 
-                <span class="subject">CS1 • Actuarial Statistics</span>
-                <span class="subject">CM1 • Actuarial Mathematics</span>
-                <span class="subject">CB1 • Business Finance</span>
-                <span class="subject">CB2 • Business Economics</span>
-                <span class="subject">CB3 • Business Management</span>
+                <span class="subject">
+                    CS1 • Actuarial Statistics
+                </span>
+
+                <span class="subject">
+                    CM1 • Actuarial Mathematics
+                </span>
+
+                <span class="subject">
+                    CB1 • Business Finance
+                </span>
+
+                <span class="subject">
+                    CB2 • Business Economics
+                </span>
+
+                <span class="subject">
+                    CB3 • Business Management
+                </span>
 
             </div>
 
         </section>
 
 
-        <!-- =========================
-             SKILLS
-             ========================= -->
+        <!-- SKILLS -->
         <section>
 
             <div class="section-heading">
-                <span class="section-number">06</span>
+                <span class="section-number">05</span>
                 <h2>Skills</h2>
                 <div class="heading-line"></div>
             </div>
+
 
             <div class="skill-columns">
 
                 <div class="skill-group">
 
-                    <h3>Technical Skills</h3>
+                    <h3>
+                        Technical Skills
+                    </h3>
 
                     <div class="skills">
-                        <span class="skill">R</span>
-                        <span class="skill">Excel</span>
-                        <span class="skill">VBA</span>
-                        <span class="skill">SQL</span>
+
+                        <span class="skill">
+                            R
+                        </span>
+
+                        <span class="skill">
+                            Excel
+                        </span>
+
+                        <span class="skill">
+                            VBA
+                        </span>
+
+                        <span class="skill">
+                            SQL
+                        </span>
+
                     </div>
 
                 </div>
@@ -830,14 +753,32 @@
 
                 <div class="skill-group">
 
-                    <h3>Professional Skills</h3>
+                    <h3>
+                        Professional Skills
+                    </h3>
 
                     <div class="skills">
-                        <span class="skill soft">Communication</span>
-                        <span class="skill soft">Leadership</span>
-                        <span class="skill soft">Problem Solving</span>
-                        <span class="skill soft">Decision Making</span>
-                        <span class="skill soft">Critical Thinking</span>
+
+                        <span class="skill soft">
+                            Communication
+                        </span>
+
+                        <span class="skill soft">
+                            Leadership
+                        </span>
+
+                        <span class="skill soft">
+                            Problem Solving
+                        </span>
+
+                        <span class="skill soft">
+                            Decision Making
+                        </span>
+
+                        <span class="skill soft">
+                            Critical Thinking
+                        </span>
+
                     </div>
 
                 </div>
@@ -847,16 +788,15 @@
         </section>
 
 
-        <!-- =========================
-             LEADERSHIP
-             ========================= -->
+        <!-- LEADERSHIP -->
         <section>
 
             <div class="section-heading">
-                <span class="section-number">07</span>
+                <span class="section-number">06</span>
                 <h2>Leadership & Activities</h2>
                 <div class="heading-line"></div>
             </div>
+
 
             <div class="leadership-item">
 
@@ -865,6 +805,7 @@
                 </div>
 
                 <div>
+
                     <h3>
                         Secretary — OPTICA Student Chapter, NCU
                     </h3>
@@ -876,6 +817,7 @@
                         Science Day events reaching 500+ participants across
                         20+ schools.
                     </p>
+
                 </div>
 
             </div>
@@ -888,6 +830,7 @@
                 </div>
 
                 <div>
+
                     <h3>
                         President — Community Service Club, NCU
                     </h3>
@@ -897,6 +840,7 @@
                         donation drives and student-focused activities while
                         coordinating planning and execution.
                     </p>
+
                 </div>
 
             </div>
@@ -906,9 +850,7 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-         ========================= -->
+    <!-- FOOTER -->
     <footer>
 
         <p>
@@ -924,12 +866,14 @@
 
             <a href="https://linkedin.com/in/avantika-vashishta"
                target="_blank"
+               rel="noopener noreferrer"
                aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in"></i>
             </a>
 
             <a href="https://github.com/Actuary-Avantika"
                target="_blank"
+               rel="noopener noreferrer"
                aria-label="GitHub">
                 <i class="fa-brands fa-github"></i>
             </a>
@@ -942,7 +886,6 @@
 
 
 <script>
-    // Automatically displays the current year
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
