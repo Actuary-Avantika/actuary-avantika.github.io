@@ -15,21 +15,24 @@
     <style>
 
         /* =========================================
-           BURGUNDY + BLUSH PROFESSIONAL PALETTE
+           COLOUR PALETTE
            ========================================= */
 
         :root {
-            --primary: #653840;
-            --primary-dark: #45252B;
-            --accent: #98606B;
-            --accent-light: #CDA8B0;
-            --soft: #E8D2D6;
-            --background: #FAF4F0;
-            --paper: #FFFDFC;
-            --header-bg: #F7F1EE;
-            --text: #302628;
-            --muted: #75676A;
-            --border: #DED0D2;
+            --wine: #632F3D;
+            --wine-dark: #43212B;
+            --wine-soft: #814957;
+
+            --blush: #E8D5D8;
+            --blush-light: #F2E5E4;
+
+            --cream: #FAF6F1;
+            --ivory: #FFFDFC;
+
+            --text: #30292A;
+            --muted: #756B6D;
+
+            --border: #DED0D1;
             --white: #FFFFFF;
         }
 
@@ -46,11 +49,12 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: var(--background);
+            background: var(--cream);
             color: var(--text);
             line-height: 1.65;
         }
@@ -67,27 +71,105 @@
 
         .page {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
-            background: var(--paper);
+            background: var(--ivory);
             min-height: 100vh;
         }
 
 
         /* =========================================
-           HEADER
+           NAVIGATION BAR
+           ========================================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 253, 252, 0.96);
+
+            border-bottom: 1px solid var(--border);
+
+            padding: 15px 7%;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+
+            color: var(--wine-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            font-size: 0.82rem;
+            font-weight: 600;
+
+            color: var(--muted);
+
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--wine);
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -6px;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--wine-soft);
+
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================================
+           HERO / HOME
            ========================================= */
 
         .hero-header {
-            background: var(--header-bg);
-            color: var(--text);
-            padding: 58px 7%;
+            background: var(--blush-light);
+
+            padding: 65px 7%;
+
             border-bottom: 1px solid var(--border);
         }
 
         .hero-content {
             max-width: 1000px;
-            margin: 0 auto;
+            margin: auto;
 
             display: flex;
             align-items: center;
@@ -101,11 +183,14 @@
         }
 
         .eyebrow {
-            color: #7A4650;
+            color: var(--wine-soft);
+
             font-size: 0.76rem;
             font-weight: 700;
+
             letter-spacing: 2.5px;
             text-transform: uppercase;
+
             margin-bottom: 15px;
         }
 
@@ -118,7 +203,7 @@
             line-height: 0.95;
             letter-spacing: -2px;
 
-            color: var(--primary-dark);
+            color: var(--wine-dark);
 
             margin-bottom: 20px;
         }
@@ -127,7 +212,7 @@
             font-size: 1rem;
             font-weight: 500;
 
-            color: var(--primary);
+            color: var(--wine);
 
             margin-bottom: 28px;
         }
@@ -135,6 +220,7 @@
         .contact-row {
             display: flex;
             flex-wrap: wrap;
+
             gap: 11px 24px;
         }
 
@@ -144,7 +230,7 @@
 
             gap: 7px;
 
-            color: #5A3A40;
+            color: #583B42;
 
             font-size: 0.84rem;
 
@@ -152,11 +238,11 @@
         }
 
         .contact-item i {
-            color: var(--accent);
+            color: var(--wine-soft);
         }
 
         .contact-item:hover {
-            color: var(--primary-dark);
+            color: var(--wine-dark);
         }
 
 
@@ -184,10 +270,10 @@
 
             background: var(--white);
 
-            border: 5px solid var(--white);
+            border: 6px solid var(--white);
 
             box-shadow:
-                0 12px 28px rgba(69, 37, 43, 0.12);
+                0 12px 30px rgba(67, 33, 43, 0.13);
         }
 
         .photo-frame img {
@@ -208,7 +294,7 @@
             top: 20px;
             left: 20px;
 
-            border: 2px solid var(--accent-light);
+            border: 2px solid var(--blush);
 
             z-index: 1;
         }
@@ -219,53 +305,93 @@
            ========================================= */
 
         main {
-            padding: 50px 7%;
+            padding: 60px 7%;
         }
 
         section {
-            margin-bottom: 52px;
+            margin-bottom: 75px;
         }
 
         .section-heading {
             display: flex;
             align-items: center;
+
             gap: 15px;
+
             margin-bottom: 25px;
         }
 
         .section-number {
-            color: var(--accent);
+            color: var(--wine-soft);
+
             font-family: Georgia, "Times New Roman", serif;
+
             font-size: 0.9rem;
             font-weight: bold;
         }
 
         h2 {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: 1.65rem;
+
+            font-size: 1.7rem;
             font-weight: 500;
-            color: var(--primary-dark);
+
+            color: var(--wine-dark);
         }
 
         .heading-line {
             flex: 1;
+
             height: 1px;
+
             background: var(--border);
         }
 
 
         /* =========================================
-           PROFILE
+           ABOUT
            ========================================= */
 
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr;
+
+            gap: 40px;
+        }
+
         .summary {
-            font-size: 1.04rem;
-            color: #5F5557;
-            max-width: 850px;
+            font-size: 1.03rem;
+
+            color: #5F5658;
+
+            max-width: 750px;
         }
 
         .summary strong {
-            color: var(--primary-dark);
+            color: var(--wine-dark);
+        }
+
+        .about-box {
+            background: var(--blush-light);
+
+            border-left: 4px solid var(--wine-soft);
+
+            padding: 22px;
+        }
+
+        .about-box h3 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            color: var(--wine-dark);
+
+            margin-bottom: 10px;
+        }
+
+        .about-box p {
+            font-size: 0.88rem;
+
+            color: var(--muted);
         }
 
 
@@ -275,33 +401,96 @@
 
         .education-card {
             border: 1px solid var(--border);
-            background: var(--background);
+
+            background: var(--cream);
+
             padding: 23px 25px;
+
             margin-bottom: 14px;
+
             transition: 0.25s ease;
         }
 
         .education-card:hover {
-            border-color: var(--accent-light);
+            border-color: var(--blush);
+
             transform: translateY(-2px);
         }
 
         .education-card h3 {
-            color: var(--primary-dark);
+            color: var(--wine-dark);
+
             font-size: 1rem;
+
             margin-bottom: 4px;
         }
 
         .education-school {
             color: var(--muted);
+
             font-size: 0.9rem;
         }
 
         .education-score {
             margin-top: 5px;
-            color: var(--accent);
+
+            color: var(--wine-soft);
+
             font-size: 0.84rem;
+
             font-weight: 700;
+        }
+
+
+        /* =========================================
+           ACTUARIAL JOURNEY
+           ========================================= */
+
+        .journey-box {
+            background: var(--wine-dark);
+
+            color: white;
+
+            padding: 30px;
+        }
+
+        .journey-box h3 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            color: var(--blush);
+
+            font-size: 1.3rem;
+
+            margin-bottom: 12px;
+        }
+
+        .journey-box p {
+            color: #EBDDE0;
+
+            font-size: 0.92rem;
+
+            margin-bottom: 20px;
+        }
+
+        .subjects {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 9px;
+        }
+
+        .subject {
+            padding: 8px 14px;
+
+            background: rgba(232, 213, 216, 0.12);
+
+            border: 1px solid rgba(232, 213, 216, 0.35);
+
+            color: var(--blush);
+
+            font-size: 0.8rem;
+
+            font-weight: 600;
         }
 
 
@@ -309,78 +498,108 @@
            PROJECTS
            ========================================= */
 
+        .project-intro {
+            color: var(--muted);
+
+            font-size: 0.92rem;
+
+            margin-bottom: 25px;
+        }
+
         .project-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+
+            gap: 20px;
         }
 
         .project-card {
             border: 1px solid var(--border);
-            padding: 25px;
+
+            padding: 27px;
+
             background: var(--white);
+
             transition: 0.25s ease;
         }
 
         .project-card:hover {
-            border-color: var(--accent-light);
-            transform: translateY(-3px);
+            border-color: var(--blush);
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px rgba(67, 33, 43, 0.06);
         }
 
         .project-icon {
-            width: 43px;
-            height: 43px;
+            width: 45px;
+            height: 45px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            background: var(--primary);
-            color: var(--accent-light);
+            background: var(--wine);
+
+            color: var(--blush);
 
             margin-bottom: 17px;
         }
 
         .project-card h3 {
             font-family: Georgia, "Times New Roman", serif;
-            color: var(--primary-dark);
-            font-size: 1.1rem;
-            margin-bottom: 3px;
+
+            color: var(--wine-dark);
+
+            font-size: 1.12rem;
+
+            margin-bottom: 5px;
         }
 
         .project-date {
-            color: var(--accent);
-            font-size: 0.8rem;
+            color: var(--wine-soft);
+
+            font-size: 0.78rem;
+
             font-weight: 700;
+
             margin-bottom: 12px;
         }
 
         .project-card p {
             font-size: 0.88rem;
+
             color: #62595B;
+
+            margin-bottom: 18px;
         }
 
+        .project-button {
+            display: inline-flex;
 
-        /* =========================================
-           ACTUARIAL STUDIES
-           ========================================= */
+            align-items: center;
 
-        .subjects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-        }
+            gap: 7px;
 
-        .subject {
             padding: 8px 14px;
 
-            background: var(--soft);
-            border: 1px solid var(--accent-light);
+            border: 1px solid var(--wine);
 
-            color: var(--primary-dark);
+            color: var(--wine);
 
-            font-size: 0.82rem;
+            font-size: 0.78rem;
+
             font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .project-button:hover {
+            background: var(--wine);
+
+            color: white;
         }
 
 
@@ -390,27 +609,44 @@
 
         .skill-columns {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
-            gap: 25px;
+
+            gap: 30px;
+        }
+
+        .skill-group {
+            padding: 25px;
+
+            background: var(--cream);
+
+            border: 1px solid var(--border);
         }
 
         .skill-group h3 {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
+
             text-transform: uppercase;
+
             letter-spacing: 1.5px;
-            color: var(--accent);
-            margin-bottom: 12px;
+
+            color: var(--wine-soft);
+
+            margin-bottom: 14px;
         }
 
         .skills {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 8px;
         }
 
         .skill {
-            background: var(--primary);
-            color: var(--white);
+            background: var(--wine);
+
+            color: white;
 
             padding: 7px 14px;
 
@@ -421,8 +657,10 @@
 
         .skill.soft {
             background: transparent;
-            color: var(--primary-dark);
-            border: 1px solid var(--accent-light);
+
+            color: var(--wine-dark);
+
+            border: 1px solid var(--blush);
         }
 
 
@@ -432,6 +670,7 @@
 
         .leadership-item {
             display: flex;
+
             gap: 18px;
 
             padding: 18px 0;
@@ -440,7 +679,8 @@
         }
 
         .leadership-icon {
-            color: var(--accent);
+            color: var(--wine-soft);
+
             font-size: 1.15rem;
 
             padding-top: 3px;
@@ -450,12 +690,89 @@
 
         .leadership-item h3 {
             font-size: 0.98rem;
-            color: var(--primary-dark);
+
+            color: var(--wine-dark);
         }
 
         .leadership-item p {
             font-size: 0.87rem;
+
             color: var(--muted);
+        }
+
+
+        /* =========================================
+           CONTACT
+           ========================================= */
+
+        .contact-box {
+            background: var(--blush-light);
+
+            padding: 35px;
+
+            text-align: center;
+
+            border: 1px solid var(--border);
+        }
+
+        .contact-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+
+            font-size: 0.9rem;
+
+            margin-bottom: 23px;
+        }
+
+        .contact-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 10px 17px;
+
+            background: var(--wine);
+
+            color: white;
+
+            font-size: 0.82rem;
+
+            font-weight: 600;
+
+            transition: 0.2s ease;
+        }
+
+        .contact-button:hover {
+            background: var(--wine-dark);
+        }
+
+        .contact-button.outline {
+            background: transparent;
+
+            color: var(--wine);
+
+            border: 1px solid var(--wine);
+        }
+
+        .contact-button.outline:hover {
+            background: var(--wine);
+
+            color: white;
         }
 
 
@@ -464,13 +781,16 @@
            ========================================= */
 
         footer {
-            background: var(--primary-dark);
-            color: #EADDE0;
+            background: var(--wine-dark);
+
+            color: #EADBDD;
 
             padding: 28px 7%;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             gap: 20px;
@@ -482,33 +802,60 @@
 
         .footer-links {
             display: flex;
+
             gap: 17px;
         }
 
         .footer-links a {
-            color: var(--accent-light);
+            color: var(--blush);
+
             font-size: 1rem;
+
             transition: 0.2s ease;
         }
 
         .footer-links a:hover {
-            color: var(--white);
+            color: white;
         }
 
 
         /* =========================================
-           RESPONSIVE
+           MOBILE
            ========================================= */
 
-        @media (max-width: 700px) {
+        @media (max-width: 760px) {
+
+            nav {
+                padding: 14px 5%;
+            }
+
+            .nav-container {
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 14px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 0.72rem;
+            }
 
             .hero-header {
-                padding: 42px 6%;
+                padding: 45px 6%;
             }
 
             .hero-content {
                 flex-direction: column-reverse;
+
                 text-align: center;
+
                 gap: 30px;
             }
 
@@ -516,16 +863,19 @@
                 flex-basis: auto;
 
                 width: 200px;
+
                 height: 245px;
             }
 
             .photo-frame {
                 width: 185px;
+
                 height: 230px;
             }
 
             .photo-decoration {
                 width: 185px;
+
                 height: 230px;
             }
 
@@ -534,50 +884,25 @@
             }
 
             main {
-                padding: 38px 6%;
+                padding: 45px 6%;
             }
 
+            .about-grid,
             .project-grid,
             .skill-columns {
                 grid-template-columns: 1fr;
             }
 
             .project-card {
-                padding: 21px;
+                padding: 22px;
             }
 
             footer {
                 flex-direction: column;
-                align-items: flex-start;
-            }
 
-        }
+                align-items: center;
 
-
-        /* =========================================
-           PRINT
-           ========================================= */
-
-        @media print {
-
-            body {
-                background: white;
-            }
-
-            .page {
-                max-width: 100%;
-            }
-
-            .hero-header {
-                background: var(--header-bg) !important;
-
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .project-card,
-            .education-card {
-                break-inside: avoid;
+                text-align: center;
             }
 
         }
@@ -589,14 +914,49 @@
 
 <body>
 
+
 <div class="page">
 
 
     <!-- =========================================
-         HEADER
+         NAVIGATION
          ========================================= -->
 
-    <header class="hero-header">
+    <nav>
+
+        <div class="nav-container">
+
+            <a href="#home" class="nav-logo">
+                AV
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#about">About</a>
+
+                <a href="#education">Education</a>
+
+                <a href="#projects">Projects</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================
+         HOME / HERO
+         ========================================= -->
+
+    <header class="hero-header" id="home">
 
         <div class="hero-content">
 
@@ -671,9 +1031,11 @@
                 <div class="photo-frame">
 
                     <!--
-                        Put your professional photo
-                        in the same folder as index.html
-                        and name it profile.jpg
+                        Upload your photo in the SAME
+                        repository as index.html.
+
+                        Rename it:
+                        profile.jpg
                     -->
 
                     <img
@@ -696,10 +1058,10 @@
 
 
         <!-- =========================================
-             PROFILE
+             ABOUT
              ========================================= -->
 
-        <section>
+        <section id="about">
 
             <div class="section-heading">
 
@@ -708,7 +1070,7 @@
                 </span>
 
                 <h2>
-                    Profile
+                    About Me
                 </h2>
 
                 <div class="heading-line"></div>
@@ -716,20 +1078,41 @@
             </div>
 
 
-            <p class="summary">
+            <div class="about-grid">
 
-                <strong>
-                    Actuarial Science postgraduate student
-                </strong>
 
-                with a background in Mathematics and an interest in applying
-                statistical, financial and analytical thinking to real-world
-                business problems. Currently pursuing an M.Sc. in Actuarial
-                Science after completing a B.Sc. (Hons.) in Mathematics, with
-                experience across technical projects, research presentation
-                and student leadership.
+                <div>
 
-            </p>
+                    <p class="summary">
+
+                        <strong>Actuarial Science postgraduate student</strong>
+                        with a background in Mathematics and an interest in
+                        applying statistical, financial and analytical thinking
+                        to real-world business problems.
+
+                        Currently pursuing an M.Sc. in Actuarial Science after
+                        completing a B.Sc. (Hons.) in Mathematics.
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <h3>
+                        What I'm Building
+                    </h3>
+
+                    <p>
+                        Developing practical skills in actuarial science,
+                        statistics, data analysis and programming through
+                        academic work and personal projects.
+                    </p>
+
+                </div>
+
+            </div>
 
         </section>
 
@@ -738,7 +1121,7 @@
              EDUCATION
              ========================================= -->
 
-        <section>
+        <section id="education">
 
             <div class="section-heading">
 
@@ -762,16 +1145,12 @@
                 </h3>
 
                 <div class="education-school">
-
                     Amity School of Insurance, Banking and Actuarial Science,
                     Amity University
-
                 </div>
 
                 <div class="education-score">
-
                     Expected 2027
-
                 </div>
 
             </div>
@@ -784,16 +1163,11 @@
                 </h3>
 
                 <div class="education-school">
-
-                    Department of Applied Sciences,
                     The NorthCap University
-
                 </div>
 
                 <div class="education-score">
-
                     2025 • 80.42%
-
                 </div>
 
             </div>
@@ -806,15 +1180,11 @@
                 </h3>
 
                 <div class="education-school">
-
                     Sri Venkateshwar International School • CBSE
-
                 </div>
 
                 <div class="education-score">
-
                     88.60%
-
                 </div>
 
             </div>
@@ -823,7 +1193,7 @@
 
 
         <!-- =========================================
-             PROJECTS & RESEARCH
+             ACTUARIAL JOURNEY
              ========================================= -->
 
         <section>
@@ -835,7 +1205,7 @@
                 </span>
 
                 <h2>
-                    Projects & Research
+                    Actuarial Journey
                 </h2>
 
                 <div class="heading-line"></div>
@@ -843,15 +1213,196 @@
             </div>
 
 
+            <div class="journey-box">
+
+                <h3>
+                    Building towards a career in Actuarial Science
+                </h3>
+
+                <p>
+                    My actuarial studies combine mathematics, statistics,
+                    economics and finance, with a focus on developing the
+                    analytical foundation required to understand and solve
+                    financial and risk-related problems.
+                </p>
+
+
+                <div class="subjects">
+
+                    <span class="subject">
+                        CS1 • Actuarial Statistics
+                    </span>
+
+                    <span class="subject">
+                        CM1 • Actuarial Mathematics
+                    </span>
+
+                    <span class="subject">
+                        CB1 • Business Finance
+                    </span>
+
+                    <span class="subject">
+                        CB2 • Business Economics
+                    </span>
+
+                    <span class="subject">
+                        CB3 • Business Management
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PROJECTS
+             ========================================= -->
+
+        <section id="projects">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <h2>
+                    Projects
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <p class="project-intro">
+                A collection of academic and personal projects exploring
+                mathematics, statistics, programming and data analysis.
+            </p>
+
+
             <div class="project-grid">
 
+
+                <!-- PROJECT 1 -->
 
                 <article class="project-card">
 
                     <div class="project-icon">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
 
+
+                    <h3>
+                        Markov Chain Analysis
+                    </h3>
+
+
+                    <div class="project-date">
+                        R • Statistics • Stochastic Processes
+                    </div>
+
+
+                    <p>
+                        Exploring transition probabilities, transition
+                        matrices and stationary distributions using
+                        Markov chain concepts and statistical computing.
+                    </p>
+
+
+                    <a
+                        href="#"
+                        class="project-button"
+                    >
+                        <i class="fa-solid fa-arrow-right"></i>
+                        View Project
+                    </a>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+
+                    <h3>
+                        SQL Data Analysis
+                    </h3>
+
+
+                    <div class="project-date">
+                        SQL • Database Management
+                    </div>
+
+
+                    <p>
+                        Building and querying a structured employee database
+                        to practise SQL operations, filtering, aggregation,
+                        joins and data analysis.
+                    </p>
+
+
+                    <a
+                        href="#"
+                        class="project-button"
+                    >
+                        <i class="fa-solid fa-arrow-right"></i>
+                        View Project
+                    </a>
+
+                </article>
+
+
+                <!-- PROJECT 3 -->
+
+                <article class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+
+                    <h3>
+                        Statistical Analysis Projects
+                    </h3>
+
+
+                    <div class="project-date">
+                        R • Statistics
+                    </div>
+
+
+                    <p>
+                        Applying statistical concepts such as correlation,
+                        regression, hypothesis testing and data analysis
+                        using R.
+                    </p>
+
+
+                    <a
+                        href="#"
+                        class="project-button"
+                    >
+                        <i class="fa-solid fa-arrow-right"></i>
+                        View Project
+                    </a>
+
+                </article>
+
+
+                <!-- PROJECT 4 -->
+
+                <article class="project-card">
+
+                    <div class="project-icon">
                         <i class="fa-solid fa-microchip"></i>
-
                     </div>
 
 
@@ -861,100 +1412,26 @@
 
 
                     <div class="project-date">
-                        May 2025
+                        Arduino • Electronics • Programming
                     </div>
 
 
                     <p>
-
-                        Developed an automatic parking system using Arduino Uno,
-                        IR sensors, servo motors and an LCD display to automate
-                        vehicle detection and gate control. Programmed real-time
-                        responses where LED indicators displayed slot availability
-                        and sensors monitored entry and exit.
-
+                        Developed an automatic parking system using Arduino
+                        Uno, IR sensors, servo motors and an LCD display for
+                        vehicle detection and parking-slot monitoring.
                     </p>
 
-                </article>
 
-
-                <article class="project-card">
-
-                    <div class="project-icon">
-
-                        <i class="fa-solid fa-chart-line"></i>
-
-                    </div>
-
-
-                    <h3>
-                        Research Paper Presentation
-                    </h3>
-
-
-                    <div class="project-date">
-                        December 2024
-                    </div>
-
-
-                    <p>
-
-                        Presented research on an alternative equation for
-                        modelling shallow water waves, including a hybrid
-                        numerical method combining Differential Quadrature
-                        Method, quintic B-splines and the Crank-Nicolson scheme.
-
-                    </p>
+                    <a
+                        href="#"
+                        class="project-button"
+                    >
+                        <i class="fa-solid fa-arrow-right"></i>
+                        View Project
+                    </a>
 
                 </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             ACTUARIAL STUDIES
-             ========================================= -->
-
-        <section>
-
-            <div class="section-heading">
-
-                <span class="section-number">
-                    04
-                </span>
-
-                <h2>
-                    Actuarial Studies
-                </h2>
-
-                <div class="heading-line"></div>
-
-            </div>
-
-
-            <div class="subjects">
-
-                <span class="subject">
-                    CS1 • Actuarial Statistics
-                </span>
-
-                <span class="subject">
-                    CM1 • Actuarial Mathematics
-                </span>
-
-                <span class="subject">
-                    CB1 • Business Finance
-                </span>
-
-                <span class="subject">
-                    CB2 • Business Economics
-                </span>
-
-                <span class="subject">
-                    CB3 • Business Management
-                </span>
 
             </div>
 
@@ -965,7 +1442,7 @@
              SKILLS
              ========================================= -->
 
-        <section>
+        <section id="skills">
 
             <div class="section-heading">
 
@@ -1003,11 +1480,15 @@
                         </span>
 
                         <span class="skill">
-                            VBA
+                            SQL
                         </span>
 
                         <span class="skill">
-                            SQL
+                            Python
+                        </span>
+
+                        <span class="skill">
+                            GitHub
                         </span>
 
                     </div>
@@ -1037,11 +1518,11 @@
                         </span>
 
                         <span class="skill soft">
-                            Decision Making
+                            Critical Thinking
                         </span>
 
                         <span class="skill soft">
-                            Critical Thinking
+                            Teamwork
                         </span>
 
                     </div>
@@ -1077,9 +1558,7 @@
             <div class="leadership-item">
 
                 <div class="leadership-icon">
-
                     <i class="fa-solid fa-users"></i>
-
                 </div>
 
 
@@ -1090,13 +1569,10 @@
                     </h3>
 
                     <p>
-
                         2023–25 • Led interdisciplinary engagement through
-                        competitions, awareness initiatives and outreach events.
-                        Helped coordinate conferences, workshops and National
-                        Science Day events reaching 500+ participants across
-                        20+ schools.
-
+                        competitions, awareness initiatives and outreach
+                        events. Helped coordinate conferences, workshops
+                        and National Science Day events.
                     </p>
 
                 </div>
@@ -1107,9 +1583,7 @@
             <div class="leadership-item">
 
                 <div class="leadership-icon">
-
                     <i class="fa-solid fa-hands-helping"></i>
-
                 </div>
 
 
@@ -1120,12 +1594,67 @@
                     </h3>
 
                     <p>
-
                         2023–25 • Organized university-wide initiatives,
                         donation drives and student-focused activities while
                         coordinating planning and execution.
-
                     </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CONTACT
+             ========================================= -->
+
+        <section id="contact">
+
+            <div class="contact-box">
+
+                <h2>
+                    Let's Connect
+                </h2>
+
+                <p>
+                    Interested in actuarial science, analytics, statistics,
+                    or potential opportunities? Feel free to reach out.
+                </p>
+
+
+                <div class="contact-buttons">
+
+                    <a
+                        class="contact-button"
+                        href="mailto:avantika.vashishta@s.amity.edu"
+                    >
+                        <i class="fa-solid fa-envelope"></i>
+                        Email Me
+                    </a>
+
+
+                    <a
+                        class="contact-button outline"
+                        href="https://linkedin.com/in/avantika-vashishta"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        LinkedIn
+                    </a>
+
+
+                    <a
+                        class="contact-button outline"
+                        href="https://github.com/Actuary-Avantika"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-github"></i>
+                        GitHub
+                    </a>
 
                 </div>
 
@@ -1180,10 +1709,13 @@
 
     </footer>
 
+
 </div>
 
 
 <script>
+
+    /* Automatically displays the current year */
 
     document.getElementById("year").textContent =
         new Date().getFullYear();
