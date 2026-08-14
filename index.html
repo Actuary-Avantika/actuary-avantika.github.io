@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Avantika Vashishta | Actuarial Science</title>
+    <title>Avantika Vashishta | Student Actuary</title>
 
     <!-- Font Awesome -->
     <link
@@ -15,17 +15,18 @@
     <style>
 
         /* =========================================
-           BURGUNDY + BLUSH PALETTE
+           BURGUNDY + BLUSH PROFESSIONAL PALETTE
            ========================================= */
 
         :root {
             --primary: #653840;
             --primary-dark: #45252B;
-            --accent: #9B606B;
-            --accent-light: #D5AEB5;
+            --accent: #98606B;
+            --accent-light: #CDA8B0;
             --soft: #E8D2D6;
             --background: #FAF4F0;
             --paper: #FFFDFC;
+            --header-bg: #F7F1EE;
             --text: #302628;
             --muted: #75676A;
             --border: #DED0D2;
@@ -75,67 +76,83 @@
 
         /* =========================================
            HEADER
-           SOFT BLUSH
            ========================================= */
 
-        header {
-            background: var(--soft);
-            color: var(--primary-dark);
-            padding: 58px 7% 48px;
-            position: relative;
-            overflow: hidden;
+        .hero-header {
+            background: var(--header-bg);
+            color: var(--text);
+            padding: 58px 7%;
             border-bottom: 1px solid var(--border);
         }
 
-        .header-content {
-            position: relative;
-            z-index: 2;
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
         }
 
         .eyebrow {
-            color: var(--accent);
-            font-size: 0.8rem;
+            color: #7A4650;
+            font-size: 0.76rem;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
-        h1 {
+        .hero-text h1 {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(2.8rem, 7vw, 5rem);
+
+            font-size: clamp(3rem, 7vw, 5.1rem);
             font-weight: 500;
-            line-height: 1;
+
+            line-height: 0.95;
             letter-spacing: -2px;
-            margin-bottom: 16px;
+
             color: var(--primary-dark);
+
+            margin-bottom: 20px;
         }
 
         .title {
-            font-size: 1.12rem;
+            font-size: 1rem;
+            font-weight: 500;
+
             color: var(--primary);
-            margin-bottom: 30px;
+
+            margin-bottom: 28px;
         }
 
         .contact-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 11px 25px;
+            gap: 11px 24px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            font-size: 0.88rem;
+
+            gap: 7px;
+
+            color: #5A3A40;
+
+            font-size: 0.84rem;
+
             transition: 0.2s ease;
         }
 
         .contact-item i {
             color: var(--accent);
-            width: 16px;
-            text-align: center;
         }
 
         .contact-item:hover {
@@ -144,15 +161,69 @@
 
 
         /* =========================================
+           PHOTO
+           ========================================= */
+
+        .photo-container {
+            position: relative;
+
+            flex: 0 0 235px;
+
+            height: 285px;
+        }
+
+        .photo-frame {
+            position: relative;
+
+            width: 215px;
+            height: 265px;
+
+            z-index: 2;
+
+            overflow: hidden;
+
+            background: var(--white);
+
+            border: 5px solid var(--white);
+
+            box-shadow:
+                0 12px 28px rgba(69, 37, 43, 0.12);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+        .photo-decoration {
+            position: absolute;
+
+            width: 215px;
+            height: 265px;
+
+            top: 20px;
+            left: 20px;
+
+            border: 2px solid var(--accent-light);
+
+            z-index: 1;
+        }
+
+
+        /* =========================================
            MAIN
            ========================================= */
 
         main {
-            padding: 48px 7%;
+            padding: 50px 7%;
         }
 
         section {
-            margin-bottom: 50px;
+            margin-bottom: 52px;
         }
 
         .section-heading {
@@ -259,11 +330,14 @@
         .project-icon {
             width: 43px;
             height: 43px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             background: var(--primary);
             color: var(--accent-light);
+
             margin-bottom: 17px;
         }
 
@@ -299,9 +373,12 @@
 
         .subject {
             padding: 8px 14px;
+
             background: var(--soft);
             border: 1px solid var(--accent-light);
+
             color: var(--primary-dark);
+
             font-size: 0.82rem;
             font-weight: 700;
         }
@@ -334,8 +411,11 @@
         .skill {
             background: var(--primary);
             color: var(--white);
+
             padding: 7px 14px;
+
             font-size: 0.8rem;
+
             border-radius: 30px;
         }
 
@@ -353,14 +433,18 @@
         .leadership-item {
             display: flex;
             gap: 18px;
+
             padding: 18px 0;
+
             border-bottom: 1px solid var(--border);
         }
 
         .leadership-icon {
             color: var(--accent);
             font-size: 1.15rem;
+
             padding-top: 3px;
+
             min-width: 20px;
         }
 
@@ -382,10 +466,13 @@
         footer {
             background: var(--primary-dark);
             color: #EADDE0;
+
             padding: 28px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             gap: 20px;
         }
 
@@ -415,21 +502,39 @@
 
         @media (max-width: 700px) {
 
-            header {
-                padding: 42px 6% 36px;
+            .hero-header {
+                padding: 42px 6%;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .photo-container {
+                flex-basis: auto;
+
+                width: 200px;
+                height: 245px;
+            }
+
+            .photo-frame {
+                width: 185px;
+                height: 230px;
+            }
+
+            .photo-decoration {
+                width: 185px;
+                height: 230px;
+            }
+
+            .contact-row {
+                justify-content: center;
             }
 
             main {
                 padding: 38px 6%;
-            }
-
-            h1 {
-                font-size: 3rem;
-            }
-
-            .contact-row {
-                flex-direction: column;
-                gap: 10px;
             }
 
             .project-grid,
@@ -445,6 +550,7 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+
         }
 
 
@@ -462,8 +568,9 @@
                 max-width: 100%;
             }
 
-            header {
-                background: var(--soft) !important;
+            .hero-header {
+                background: var(--header-bg) !important;
+
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -472,9 +579,11 @@
             .education-card {
                 break-inside: avoid;
             }
+
         }
 
     </style>
+
 </head>
 
 
@@ -487,62 +596,94 @@
          HEADER
          ========================================= -->
 
-    <header>
+    <header class="hero-header">
 
-        <div class="header-content">
+        <div class="hero-content">
 
-            <div class="eyebrow">
-                Actuarial Science • Mathematics
+
+            <div class="hero-text">
+
+                <div class="eyebrow">
+                    ACTUARIAL SCIENCE • MATHEMATICS
+                </div>
+
+
+                <h1>
+                    Avantika<br>Vashishta
+                </h1>
+
+
+                <p class="title">
+                    Student Actuary | M.Sc. Actuarial Science | Mathematics Graduate
+                </p>
+
+
+                <div class="contact-row">
+
+                    <a
+                        class="contact-item"
+                        href="mailto:avantika.vashishta@s.amity.edu"
+                    >
+                        <i class="fa-solid fa-envelope"></i>
+                        Email
+                    </a>
+
+
+                    <a
+                        class="contact-item"
+                        href="tel:+918383883989"
+                    >
+                        <i class="fa-solid fa-phone"></i>
+                        Phone
+                    </a>
+
+
+                    <a
+                        class="contact-item"
+                        href="https://linkedin.com/in/avantika-vashishta"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        LinkedIn
+                    </a>
+
+
+                    <a
+                        class="contact-item"
+                        href="https://github.com/Actuary-Avantika"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="fa-brands fa-github"></i>
+                        GitHub
+                    </a>
+
+                </div>
+
             </div>
 
-            <h1>
-                Avantika<br>Vashishta
-            </h1>
 
-            <p class="title">
-                M.Sc. Actuarial Science Student | Mathematics Graduate
-            </p>
+            <!-- PHOTO -->
 
-            <div class="contact-row">
+            <div class="photo-container">
 
-                <a
-                    class="contact-item"
-                    href="mailto:avantika.vashishta@s.amity.edu"
-                >
-                    <i class="fa-solid fa-envelope"></i>
-                    avantika.vashishta@s.amity.edu
-                </a>
+                <div class="photo-frame">
 
+                    <!--
+                        Put your professional photo
+                        in the same folder as index.html
+                        and name it profile.jpg
+                    -->
 
-                <a
-                    class="contact-item"
-                    href="tel:+918383883989"
-                >
-                    <i class="fa-solid fa-phone"></i>
-                    +91 83838 83989
-                </a>
+                    <img
+                        src="profile.jpg"
+                        alt="Avantika Vashishta"
+                    >
 
+                </div>
 
-                <a
-                    class="contact-item"
-                    href="https://linkedin.com/in/avantika-vashishta"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    LinkedIn
-                </a>
-
-
-                <a
-                    class="contact-item"
-                    href="https://github.com/Actuary-Avantika"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fa-brands fa-github"></i>
-                    GitHub
-                </a>
+                <div class="photo-decoration"></div>
 
             </div>
 
