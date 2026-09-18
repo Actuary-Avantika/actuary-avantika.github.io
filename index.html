@@ -34,6 +34,15 @@
 
             --border: #DED0D1;
             --white: #FFFFFF;
+
+            --plum: #7B2CBF;
+            --violet: #5B21B6;
+            --rose: #D94680;
+            --gold: #C59A3D;
+            --teal: #0F766E;
+            --sky: #2563EB;
+            --gradient-main: linear-gradient(135deg, #632F3D 0%, #7B2CBF 48%, #2563EB 100%);
+            --gradient-soft: linear-gradient(135deg, #F8EDEF 0%, #F4ECF8 48%, #EEF4FF 100%);
         }
 
 
@@ -907,6 +916,489 @@
 
         }
 
+
+        /* =========================================
+           INTERACTIVE / VISUAL ENHANCEMENTS
+           ========================================= */
+
+        body {
+            background:
+                radial-gradient(circle at 8% 8%, rgba(123, 44, 191, 0.10), transparent 24%),
+                radial-gradient(circle at 92% 18%, rgba(37, 99, 235, 0.09), transparent 22%),
+                radial-gradient(circle at 78% 78%, rgba(217, 70, 128, 0.07), transparent 24%),
+                var(--cream);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(rgba(99, 47, 61, 0.08) 1px, transparent 1px);
+            background-size: 28px 28px;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent 62%);
+            z-index: -1;
+        }
+
+        .page {
+            box-shadow: 0 0 0 1px rgba(99, 47, 61, 0.06), 0 28px 80px rgba(67, 33, 43, 0.08);
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--gradient-main);
+            z-index: 2000;
+            box-shadow: 0 2px 12px rgba(123, 44, 191, 0.25);
+        }
+
+        nav {
+            background: rgba(255, 253, 252, 0.88);
+            border-bottom: 1px solid rgba(99, 47, 61, 0.12);
+            box-shadow: 0 8px 24px rgba(67, 33, 43, 0.05);
+        }
+
+        nav::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(123,44,191,.42), rgba(37,99,235,.42), transparent);
+            opacity: .65;
+        }
+
+        .nav-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 34px;
+            border-radius: 10px;
+            background: var(--gradient-main);
+            color: #fff !important;
+            letter-spacing: 1px;
+            box-shadow: 0 7px 18px rgba(99, 47, 61, 0.18);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .nav-logo:hover {
+            transform: translateY(-2px) rotate(-1deg);
+            box-shadow: 0 10px 22px rgba(123, 44, 191, 0.22);
+        }
+
+        .nav-links a.active {
+            color: var(--wine-dark);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+            background: var(--gradient-main);
+        }
+
+        .hero-header {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(123, 44, 191, 0.14), transparent 30%),
+                radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.10), transparent 26%),
+                var(--gradient-soft);
+        }
+
+        .hero-header::before,
+        .hero-header::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(1px);
+            pointer-events: none;
+        }
+
+        .hero-header::before {
+            width: 230px;
+            height: 230px;
+            right: -80px;
+            top: -90px;
+            background: radial-gradient(circle, rgba(217,70,128,.13), transparent 66%);
+            animation: floatBlob 8s ease-in-out infinite;
+        }
+
+        .hero-header::after {
+            width: 180px;
+            height: 180px;
+            left: -70px;
+            bottom: -70px;
+            background: radial-gradient(circle, rgba(37,99,235,.10), transparent 66%);
+            animation: floatBlob 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatBlob {
+            0%, 100% { transform: translate3d(0,0,0) scale(1); }
+            50% { transform: translate3d(8px,-10px,0) scale(1.06); }
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 11px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.62);
+            border: 1px solid rgba(123,44,191,.16);
+            box-shadow: 0 6px 18px rgba(99,47,61,.06);
+            animation: fadeUp .7s ease both;
+        }
+
+        .hero-text h1 {
+            background: linear-gradient(120deg, var(--wine-dark), var(--plum), var(--sky));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: none;
+        }
+
+        .title {
+            display: inline-block;
+            padding-left: 12px;
+            border-left: 3px solid transparent;
+            border-image: linear-gradient(to bottom, var(--rose), var(--violet)) 1;
+        }
+
+        .photo-frame {
+            border-radius: 20px;
+            transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease;
+        }
+
+        .photo-container:hover .photo-frame {
+            transform: translateY(-6px) rotate(1deg);
+            box-shadow: 0 20px 42px rgba(67, 33, 43, 0.18);
+        }
+
+        .photo-decoration {
+            border-radius: 20px;
+            border-color: rgba(123,44,191,.36);
+            transition: transform .45s ease;
+        }
+
+        .photo-container:hover .photo-decoration {
+            transform: translate(5px, 5px);
+        }
+
+        .section-heading {
+            position: relative;
+        }
+
+        .section-heading h2 {
+            position: relative;
+            transition: color .25s ease;
+        }
+
+        .section-heading:hover h2 {
+            color: var(--plum);
+        }
+
+        .heading-line {
+            background: linear-gradient(90deg, rgba(99,47,61,.16), rgba(123,44,191,.36), rgba(37,99,235,.18));
+        }
+
+        .section-number {
+            color: var(--plum);
+        }
+
+        .about-box,
+        .education-card,
+        .skill-group,
+        .contact-box {
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(67,33,43,.04);
+        }
+
+        .about-box {
+            border-left: 4px solid var(--plum);
+            background: linear-gradient(135deg, rgba(242,229,228,.92), rgba(244,236,248,.88));
+        }
+
+        .education-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-main);
+            transform: scaleY(0);
+            transform-origin: center;
+            transition: transform .28s ease;
+        }
+
+        .education-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .journey-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            background:
+                radial-gradient(circle at 90% 10%, rgba(123,44,191,.42), transparent 28%),
+                radial-gradient(circle at 10% 90%, rgba(37,99,235,.24), transparent 26%),
+                linear-gradient(135deg, #43212B, #4E2438 42%, #341B3A);
+            box-shadow: 0 18px 42px rgba(67, 33, 43, 0.14);
+        }
+
+        .subject {
+            border-radius: 999px;
+            transition: transform .2s ease, background .2s ease, border-color .2s ease;
+        }
+
+        .subject:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,.16);
+            border-color: rgba(232,213,216,.6);
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(67,33,43,.04);
+            transform-style: preserve-3d;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--wine), var(--plum), var(--sky));
+        }
+
+        .project-card:nth-child(2)::before {
+            background: linear-gradient(90deg, var(--teal), var(--sky), var(--violet));
+        }
+
+        .project-card:nth-child(3)::before {
+            background: linear-gradient(90deg, var(--rose), var(--plum), var(--wine));
+        }
+
+        .project-card:nth-child(4)::before {
+            background: linear-gradient(90deg, var(--gold), var(--rose), var(--plum));
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px) perspective(900px) rotateX(1deg);
+            border-color: rgba(123,44,191,.22);
+            box-shadow: 0 18px 36px rgba(67, 33, 43, 0.11);
+        }
+
+        .project-icon {
+            border-radius: 13px;
+            background: var(--gradient-main);
+            box-shadow: 0 9px 20px rgba(99,47,61,.16);
+            transition: transform .25s ease;
+        }
+
+        .project-card:nth-child(2) .project-icon {
+            background: linear-gradient(135deg, #0F766E, #2563EB);
+        }
+
+        .project-card:nth-child(3) .project-icon {
+            background: linear-gradient(135deg, #D94680, #7B2CBF);
+        }
+
+        .project-card:nth-child(4) .project-icon {
+            background: linear-gradient(135deg, #C59A3D, #D94680);
+        }
+
+        .project-card:hover .project-icon {
+            transform: translateY(-2px) scale(1.05) rotate(2deg);
+        }
+
+        .project-button {
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(135deg, rgba(99,47,61,.08), rgba(123,44,191,.08));
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .project-button::before,
+        .contact-button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-main);
+            transform: translateX(-101%);
+            transition: transform .3s ease;
+            z-index: -1;
+        }
+
+        .project-button:hover::before,
+        .contact-button:hover::before {
+            transform: translateX(0);
+        }
+
+        .project-button:hover,
+        .contact-button.outline:hover {
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .skill-group {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-group::after {
+            content: "";
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            right: -45px;
+            bottom: -55px;
+            border-radius: 50%;
+            background: rgba(123,44,191,.06);
+        }
+
+        .skill {
+            position: relative;
+            z-index: 1;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(99,47,61,.12);
+        }
+
+        .leadership-item {
+            transition: transform .2s ease, padding-left .2s ease;
+        }
+
+        .leadership-item:hover {
+            transform: translateX(4px);
+            padding-left: 5px;
+        }
+
+        .leadership-icon {
+            color: var(--plum);
+        }
+
+        .contact-box {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(123,44,191,.10), transparent 25%),
+                radial-gradient(circle at 85% 80%, rgba(37,99,235,.10), transparent 25%),
+                var(--gradient-soft);
+        }
+
+        .contact-button {
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(99,47,61,.10);
+        }
+
+        .contact-button.outline {
+            background: rgba(255,255,255,.62);
+        }
+
+        footer {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 86% 20%, rgba(123,44,191,.20), transparent 22%),
+                linear-gradient(135deg, #43212B, #341B3A);
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 42px;
+            height: 42px;
+            border: 0;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--gradient-main);
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(67,33,43,.20);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: .25s ease;
+            z-index: 1200;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .65s ease, transform .65s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .back-to-top {
+                right: 14px;
+                bottom: 14px;
+            }
+            .title {
+                border-left: 0;
+                border-top: 3px solid transparent;
+                border-image: linear-gradient(to right, var(--rose), var(--violet)) 1;
+                padding-left: 0;
+                padding-top: 8px;
+            }
+        }
+
+    
+        .project-card:nth-child(2),
+        .education-card:nth-child(2),
+        .skill-group:nth-child(2) { transition-delay: .06s; }
+
+        .project-card:nth-child(3) { transition-delay: .12s; }
+        .project-card:nth-child(4) { transition-delay: .18s; }
+
     </style>
 
 </head>
@@ -914,6 +1406,7 @@
 
 <body>
 
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <div class="page">
 
@@ -933,17 +1426,17 @@
 
             <div class="nav-links">
 
-                <a href="#home">Home</a>
+                <a href="#home" data-nav-target="home">Home</a>
 
-                <a href="#about">About</a>
+                <a href="#about" data-nav-target="about">About</a>
 
-                <a href="#education">Education</a>
+                <a href="#education" data-nav-target="education">Education</a>
 
-                <a href="#projects">Projects</a>
+                <a href="#projects" data-nav-target="projects">Projects</a>
 
-                <a href="#skills">Skills</a>
+                <a href="#skills" data-nav-target="skills">Skills</a>
 
-                <a href="#contact">Contact</a>
+                <a href="#contact" data-nav-target="contact">Contact</a>
 
             </div>
 
@@ -1061,7 +1554,7 @@
              ABOUT
              ========================================= -->
 
-        <section id="about">
+        <section id="about" class="reveal">
 
             <div class="section-heading">
 
@@ -1121,7 +1614,7 @@
              EDUCATION
              ========================================= -->
 
-        <section id="education">
+        <section id="education" class="reveal">
 
             <div class="section-heading">
 
@@ -1138,7 +1631,7 @@
             </div>
 
 
-            <div class="education-card">
+            <div class="education-card reveal">
 
                 <h3>
                     M.Sc. Actuarial Science
@@ -1156,7 +1649,7 @@
             </div>
 
 
-            <div class="education-card">
+            <div class="education-card reveal">
 
                 <h3>
                     B.Sc. (Hons.) Mathematics
@@ -1173,7 +1666,7 @@
             </div>
 
 
-            <div class="education-card">
+            <div class="education-card reveal">
 
                 <h3>
                     Class X
@@ -1196,7 +1689,7 @@
              ACTUARIAL JOURNEY
              ========================================= -->
 
-        <section>
+        <section class="reveal">
 
             <div class="section-heading">
 
@@ -1260,7 +1753,7 @@
              PROJECTS
              ========================================= -->
 
-        <section id="projects">
+        <section id="projects" class="reveal">
 
             <div class="section-heading">
 
@@ -1286,7 +1779,7 @@
             <div class="project-grid">
 
                 <!-- PROJECT 1 -->
-                <article class="project-card">
+                <article class="project-card reveal">
                     <div class="project-icon">
                         <i class="fa-solid fa-diagram-project"></i>
                     </div>
@@ -1316,7 +1809,7 @@
                 </article>
 
                 <!-- PROJECT 2 -->
-                <article class="project-card">
+                <article class="project-card reveal">
                     <div class="project-icon">
                         <i class="fa-solid fa-scale-balanced"></i>
                     </div>
@@ -1346,7 +1839,7 @@
                 </article>
 
                 <!-- PROJECT 3 -->
-                <article class="project-card">
+                <article class="project-card reveal">
                     <div class="project-icon">
                         <i class="fa-solid fa-heart-pulse"></i>
                     </div>
@@ -1364,14 +1857,14 @@
                         dashboard.
                     </p>
 
-                    <a href="#" class="project-button">
+                    <a href="https://actuary-avantika.github.io/Life-Insurance-Pricing-Model/" class="project-button" target="_blank" rel="noopener noreferrer">
                         <i class="fa-solid fa-arrow-right"></i>
                         View Project
                     </a>
                 </article>
 
                 <!-- PROJECT 4 -->
-                <article class="project-card">
+                <article class="project-card reveal">
                     <div class="project-icon">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
@@ -1388,7 +1881,7 @@
                         of risk-sharing decisions on insurer outcomes.
                     </p>
 
-                    <a href="#" class="project-button">
+                    <a href="https://actuary-avantika.github.io/Reinsurance-Strategy-Optimizer/" class="project-button" target="_blank" rel="noopener noreferrer">
                         <i class="fa-solid fa-arrow-right"></i>
                         View Project
                     </a>
@@ -1403,7 +1896,7 @@
              SKILLS
              ========================================= -->
 
-        <section id="skills">
+        <section id="skills" class="reveal">
 
             <div class="section-heading">
 
@@ -1423,7 +1916,7 @@
             <div class="skill-columns">
 
 
-                <div class="skill-group">
+                <div class="skill-group reveal">
 
                     <h3>
                         Technical Skills
@@ -1457,7 +1950,7 @@
                 </div>
 
 
-                <div class="skill-group">
+                <div class="skill-group reveal">
 
                     <h3>
                         Professional Skills
@@ -1516,7 +2009,7 @@
             </div>
 
 
-            <div class="leadership-item">
+            <div class="leadership-item reveal">
 
                 <div class="leadership-icon">
                     <i class="fa-solid fa-users"></i>
@@ -1541,7 +2034,7 @@
             </div>
 
 
-            <div class="leadership-item">
+            <div class="leadership-item reveal">
 
                 <div class="leadership-icon">
                     <i class="fa-solid fa-hands-helping"></i>
@@ -1571,7 +2064,7 @@
              CONTACT
              ========================================= -->
 
-        <section id="contact">
+        <section id="contact" class="reveal">
 
             <div class="contact-box">
 
@@ -1626,6 +2119,10 @@
     </main>
 
 
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <!-- =========================================
          FOOTER
          ========================================= -->
@@ -1675,6 +2172,75 @@
 
 
 <script>
+
+
+    /* Interactive resume enhancements */
+    document.addEventListener("DOMContentLoaded", function () {
+        const progress = document.getElementById("scrollProgress");
+        const backToTop = document.getElementById("backToTop");
+        const navLinks = Array.from(document.querySelectorAll(".nav-links a[data-nav-target]"));
+        const observedSections = Array.from(document.querySelectorAll("main > section[id]"));
+
+        function updateProgress() {
+            const scrollTop = window.scrollY;
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            const percent = total > 0 ? (scrollTop / total) * 100 : 0;
+            progress.style.width = percent + "%";
+            backToTop.classList.toggle("show", scrollTop > 420);
+        }
+
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        updateProgress();
+
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navLinks.forEach(link => {
+                        link.classList.toggle("active", link.dataset.navTarget === id);
+                    });
+                }
+            });
+        }, {
+            rootMargin: "-25% 0px -55% 0px",
+            threshold: 0
+        });
+
+        observedSections.forEach(section => sectionObserver.observe(section));
+
+        // Subtle tilt effect on project cards (desktop only)
+        if (window.matchMedia("(min-width: 901px)").matches &&
+            !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            document.querySelectorAll(".project-card").forEach(card => {
+                card.addEventListener("mousemove", function (event) {
+                    const rect = card.getBoundingClientRect();
+                    const x = (event.clientX - rect.left) / rect.width - 0.5;
+                    const y = (event.clientY - rect.top) / rect.height - 0.5;
+                    card.style.transform =
+                        `translateY(-7px) perspective(900px) rotateX(${(-y * 2.2).toFixed(2)}deg) rotateY(${(x * 2.2).toFixed(2)}deg)`;
+                });
+
+                card.addEventListener("mouseleave", function () {
+                    card.style.transform = "";
+                });
+            });
+        }
+    });
 
     /* Automatically displays the current year */
 
